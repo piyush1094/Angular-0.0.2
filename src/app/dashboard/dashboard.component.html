@@ -1,0 +1,80 @@
+
+<div class="container">
+  <form [formGroup]>
+      <div class="form-group">
+        <label for="checkInDate">Check In</label>
+        <input type="date" class="form-control" id="checkInDate">
+      </div>
+      <div class="form-group">
+        <label for="checkOutDate">Check Out</label>
+        <input type="date" class="form-control" id="checkOutDate">
+      </div>
+      <select class="custom-select mb-2">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="four">4</option>
+        <option value="eight" selected>8</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<!-- <div class="container">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="..." class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="row">
+  <div class="col">
+      <div class="card border-dark mb-3">
+          <div class="card-header">Campgrounds</div>
+          <div class="card-body text-dark">
+            <div class="card-text">
+              <table class="table table-dark table-hover" *ngIf = "camps && camps.length > 0; else noCamps">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Location</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor = "let camp of camps">
+                    <tr>
+                      <td>{{camp.Name}}</td>
+                      <td>{{camp.Location}}</td> 
+                      <td>
+                          <button class="btn btn-success" (click) = "viewCamp(camp)">View</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<ng-template #noCamps>
+  <div class="alert alert danger">
+      <div class="row">
+          <div class="col-2">
+              <span>No Todos Available</span>
+          </div>
+          <div class="col">
+              <button class="btn btn-sm btn-info" routerLink="/todo/new" >Create Todos</button>
+          </div>
+      </div>
+  </div>
+</ng-template>

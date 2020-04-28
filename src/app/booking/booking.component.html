@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 bookingStyle">
+
+        </div>
+        <div class="col-md-8">
+            <div class="row bookingStyle">
+                jkhkjhjkh
+            </div>
+            <div class="row bookingStyle">
+                <div class="ml-2 mb-2">
+                    <form [formGroup]="form" #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+                        <!-- ------------------------------------------------------------- -->
+                        <div class="form-group">
+                           <label for="name">Name</label>
+                           <input formControlName="name"  type="text" class="form-control" id="name">
+                           <div *ngIf="form.get('name').touched && form.get('name').invalid" class="alert alert-danger">Name is Required</div>
+                         </div>
+                         <!-- ------------------------------------------------------------- -->
+                       <div class="form-group">
+                           <label for="address">Address</label>
+                           <input formControlName="address"  type="text" class="form-control" id="address">
+                           <div *ngIf="form.get('address').touched && form.get('address').invalid" class="alert alert-danger">Address is Required</div>
+                         </div>
+                         <!-- ------------------------------------------------------------- -->
+                       <div class="form-group">
+                           <label for="state">State</label>
+                           <input formControlName="state"  type="text" class="form-control" id="text">
+                           <div *ngIf="form.get('state').touched && form.get('state').invalid" class="alert alert-danger">State is Required</div>
+                         </div>
+                         <!-- ------------------------------------------------------------- -->
+                       <div class="form-group">
+                           <label for="country">Country</label>
+                           <input formControlName="country"  type="text" class="form-control" id="country">
+                           <div *ngIf="form.get('country').touched && form.get('country').invalid" class="alert alert-danger">Country is Required</div>
+                         </div>
+                         <!-- ------------------------------------------------------------- -->
+                       <div class="form-group">
+                           <label for="contact">Contact No.</label>
+                           <input formControlName="contact"  type="text" class="form-control" id="contact">
+                           <div *ngIf="form.get('contact').touched && form.get('contact').invalid" class="alert alert-danger">
+                               <div *ngIf="form.get('contact').errors.required">Mobile number is required</div>
+                               <div *ngIf="form.get('contact').errors && !form.get('contact').errors.required">Mobile number is invalid</div>
+                           </div>
+                         </div>
+                       <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

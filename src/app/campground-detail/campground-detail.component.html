@@ -1,0 +1,17 @@
+<div class="row" *ngIf="camp">
+    <div class="col">
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h4>{{camp.Name}}</h4>
+            </div>
+            <div class="card-body text-dark">
+              <div class="card-text">
+                <h6>{{camp.Location}}</h6>
+              </div>
+              <div>
+                  <button class="btn btn-success" routerLink = "/dashboard">Back to dashboard</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

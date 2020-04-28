@@ -1,0 +1,25 @@
+
+<h1 class="ml-3"> Login</h1>
+<div class="container">
+  <form [formGroup]="form">
+      <!-- ------------------------------------------------------------- -->
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input formControlName="username"  type="email" class="form-control" id="username">
+          <div *ngIf="form.get('username').touched && form.get('username').invalid" class="alert alert-danger">
+                <div *ngIf="form.get('username').errors.required" >Username is required</div>
+                <div *ngIf="form.get('username').errors.email" >Username has proper format</div>
+          </div>
+        </div>
+        <!-- ------------------------------------------------------------- -->
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input formControlName="password"  type="password" class="form-control" id="password">
+           <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert alert-danger">
+                <div *ngIf="form.get('password').errors.required" >Password is required</div>
+                <div *ngIf="form.get('password').errors.pattern" >Password has proper format</div>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
